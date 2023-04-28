@@ -1,0 +1,128 @@
+Azure DevOps-GIT
+---------------------
+
+Ref : https://devconnected.com/how-to-switch-branch-on-git/
+
+Ref : https://www.youtube.com/watch?v=lZ2pGuSD-l4&list=PLNNeqe21-U0NC5QEHW-c8EoNqmRdiEESp&index=2
+
+
+
+Login to AzureDevOps Portal
+Create a New Project or Open Existed Project
+Navigate to Repo --> Click on Files
+Navigate to GIT Project Path from Local Machine ( Exp : C:\Users\priya\AzureOpsProjecct)
+Open GIT Bash
+Type : pwd in GIT Bash Command Line to see the present working directory
+
+Clone the Repository
+Goto Project --> Click on Three dots next to the Project
+Click on Clone Copy ( https://giriqaops@dev.azure.com/giriqaops/AzureOpsProjecct/_git/AzureOpsProjecct)
+
+git clone "https://giriqaops@dev.azure.com/giriqaops/AzureOpsProjecct/_git/AzureOpsProjecct"
+
+Navigate to the Path (cd C:\Users\priya\AzureOpsProjecct)
+
+Type : ls
+
+Create a file :  echo "welcome to Azure GIT" > gitproject.txt
+Check whether the newly created file presented in the specified folder
+
+1. Navigate to the specific path and check
+2. Type : ls and check
+
+
+Type : git add .  
+
+Type : git commit -m " Added Git Project File"  ( To commit the file locally)
+
+Type : git push origin master
+
+Check the exact Branch in GIT
+
+Type : git status
+
+Change from one branch to another branch ( If the branches are already existed)
+
+$ git checkout <existing_branch> (exp master)
+
+Create a New Branch 
+
+$ git checkout -b <new_branch>
+
+Push the code to the master branch
+
+Type : git push origin master
+
+To check the git origin 
+
+If Origin is not existed then 
+
+Type : git remote add origin <https://github.com/user/repo.git ---> Clone of the Project)
+
+To remove the origin : $ git remote rm origin
+
+Type : git remote
+
+Type : git remote -v
+
+Type : git push origin master
+
+Note : if above is not working then 
+
+Type : git push -f origin master
+
+
+
+Case 1 : Create code in Local machine and push to Remote
+---------------------------------------------------------
+
+Navigate to Local path
+Open the file toi be updated
+update the file and Save 
+
+Navigate to Remote location and corresponding branch ( Master/Dev/Feature)
+Open the same file and check whther newly added code got updated?
+It should not show the newly added code 
+
+Goto GIT Bash Commandline
+Switch to the respective Branch
+
+$ git checkout dev 
+
+Check whether we are in dev branch or not
+
+$ git status
+
+git init
+git add .
+git commit -m "Updated the code"
+
+git remote add "https://giriqaops@dev.azure.com/giriqaops/AzureOpsProjecct/_git/AzureOpsProjecct"
+
+git remote -v
+
+git push origin dev
+or 
+git push  --all
+
+================================================================================
+
+Push code from dev to master
+
+
+Navigate to Azure Repo
+Create a Pull Request
+Approve
+
+==============================================================================
+
+Pull code from Remote to Local
+
+Navigate to specific Branch
+
+git fetch
+git merge
+
+git pull origin Branch <master>
+
+================================================================================
